@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Diamonds will be dynamically inserted here -->
+        <div id="diamonds-section">
+            <p><strong>Diamonds:</strong> <span id="diamonds-count">Loading...</span> 💎</p>
+        </div>
+
+        <h2>💞</h2>
+
+        <!-- Buttons Section -->
+        <div class="buttons-container">
+            <button class="dashboard-btn" onclick="window.location.href='profile.html'">Profile</button>
+            <button class="dashboard-btn" onclick="window.location.href='freepoints.html'">Free Points</button>
+            <button class="dashboard-btn" onclick="window.location.href='indexleader.html'">Leaderboard</button>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Define user ID and auth token
+            const uId = '101288742115400909221';
+            const auth = 'QB9iIpve0clmPFlclxQv8blO36gNWY0Iqgr55ojkiB5vQMdoLuRCg6yabm617JyBPlZcjafQy3GLmQm3Wcv3NR44jYxLxyev6G5A';
+
+            // Fetch the user data (including diamonds)
+            fetch('https://api.jawaheradmin.xyz/fetchUserData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Accept-Encoding': 'gzip, deflate, br',
+                    'User-Agent': 'okhttp/4.10.0'
+                },
+                body: `uId=${uId}&auth=${auth}`
+            })
+            .then(response => response.json())  // Parse JSON response
+            .then(data => {
+                // Check if the response contains diamonds data
+                if (data && data.diamonds !== undefined) {
+                    // Update the diamonds count on the dashboard
+                    document.getElementById('diamonds-count').textContent = data.diamonds;
+                } else {
+                    // If no diamonds value is returned, show an error
+                    document.getElementById('diamonds-count').textContent = 'Error';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('diamonds-count').textContent = 'Error';
+            });
+        };
+    </script>
+</body>
+</html>

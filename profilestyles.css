@@ -1,0 +1,82 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Default font */
+    background-color: #000000; /* Black background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.profile-container {
+    background-color: #333333; /* Dark gray background for profile */
+    border-radius: 10px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slight gray shadow */
+}
+
+/* Center the GIF */
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* Space between GIF and profile details */
+}
+
+.profile-gif {
+    max-width: 100%;
+    height: auto;
+}
+
+#profile-details p {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white; /* White text for profile details */
+}
+
+#profile-details p strong {
+    font-weight: 900;
+    color: #000000; /* Lighter gray color for strong text */
+}
+
+#profile-details {
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+p {
+    font-size: 18px;
+    color: white; /* White text */
+}
+
+strong {
+    color: #140b0b; /* Lighter gray for important text */
+    font-size: 20px;
+}
+
+/* Back button style */
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShyShy Bot 💋</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: white;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+            color: white;
+        }
+        input {
+            padding: 10px;
+            width: 200px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: #333;
+            color: white;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        button:hover {
+            background-color: #777;
+        }
+        .instructions {
+            font-size: 1rem;
+            color: gray;
+            margin-top: 20px;
+        }
+        .back-button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #777;
+        }
+        /* Centering the GIF */
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            width: 300px;
+        }
+        .success-message {
+            font-size: 1.2rem;
+            color: #28a745; /* Green color for success */
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        let lastSentNumber = null; // To track the last sent number
+
+        function sendRequests() {
+            let input = document.getElementById("userInput").value;
+            let repeatCount = 0;
+
+            // Validate the input
+            if (input === "100") {
+                repeatCount = 10;
+            } else if (input === "200") {
+                repeatCount = 20;
+            } else if (input === "50") {
+                repeatCount = 5;
+            } else if (input === "10") {
+                repeatCount = 1;
+            } else {
+                alert("Please enter a valid number: 10, 50, 100, or 200.");
+                return;
+            }
+
+            let successMessageDiv = document.getElementById("success-message");
+
+            // Clear messages if the number has changed
+            if (lastSentNumber !== input) {
+                successMessageDiv.innerHTML = "";
+            }
+
+            lastSentNumber = input; // Update last sent number
+
+            // Send requests
+            for (let i = 0; i < repeatCount; i++) {
+                fetch("https://api.jawaheradmin.xyz/gamesAPI", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                        "Accept-Encoding": "gzip, deflate, br",
+                        "User-Agent": "okhttp/4.10.0"
+                    },
+                    body: "uId=101288742115400909221&auth=QB9iIpve0clmPFlclxQv8blO36gNWY0Iqgr55ojkiB5vQMdoLuRCg6yabm617JyBPlZcjafQy3GLmQm3Wcv3NR44jYxLxyev6G5A"
+                }).then(response => response.text())
+                  .then(data => {
+                      console.log("Response:", data);
+                  })
+                  .catch(error => console.error("Error:", error));
+            }
+
+            // Append success message
+            successMessageDiv.innerHTML += `Successfully sent ${input} points! 🎉<br>`;
+        }
+
+        function goToDashboard() {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <button class="back-button" onclick="goToDashboard()">← </button>
+
+    <h2>💕</h2>
+    <input type="text" id="userInput" placeholder="Type here...">
+    <button onclick="sendRequests()">Send</button>
+
+    <div class="gif-container">
+        <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExajk4eHh1d3pra2FyY2lwOWlzbnE2YWpwYmZsd2oyMm9pcmZ5ajF2cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/lJNoBCvQYp7nq/giphy.gif" alt="Loading GIF">
+    </div>
+
+    <div id="success-message" class="success-message"></div>
+
+    <div class="instructions">
+        <p>Enter 10, 50, 100, or 200 to send.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('assets/background.png'); /* Background image */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Don't repeat the background */
+    color: white; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Dashboard container styling */
+.dashboard-container {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Container */
+.buttons-container {
+    margin-top: 20px;
+}
+
+/* Button styling */
+.dashboard-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #333333; /* Dark gray button */
+    color: white; /* White text */
+    border: 1px solid #444444; /* Slightly lighter gray border */
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button hover effect */
+.dashboard-btn:hover {
+    background-color: #555555; /* Lighter gray when hovering */
+}
+
+/* Dashboard heading */
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Dashboard paragraph */
+p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}

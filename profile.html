@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profilestyles.css"> <!-- Link to your style file -->
+    <script>
+        // Function to navigate to dashboard
+        function goToDashboard() {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <!-- Back button to go to the dashboard -->
+    <button class="back-button" onclick="goToDashboard()">←  </button>
+
+    <div class="profile-container">
+        <!-- Center the GIF -->
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNXBrZHBtMW54ZDd0cDQ4NWRmMnV5dzNjeGtzbnBqcWEwaTQh1Y1JjA3yW21RewAhxjanvaUoSkVZF3PjdD1n/MDJ9IbxxvDUQM/giphy.gif" alt="Loading GIF" class="profile-gif">
+        </div>
+
+        <!-- Profile details will appear here after fetching -->
+        <div id="profile-details"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

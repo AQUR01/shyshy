@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="leaderstyle.css">
+    <script>
+        // Function to navigate to dashboard
+        function goToDashboard() {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <!-- Back button to go to the dashboard -->
+    <button class="back-button" onclick="goToDashboard()">←  </button>
+
+    <div class="container">
+        <h1>Leaderboard</h1>
+
+        <!-- Leaderboard data will appear here -->
+        <div id="leaderboard" class="leaderboard">
+            <p>Loading leaderboard...</p>
+        </div>
+    </div>
+
+    <script src="leaderscript.js"></script>
+</body>
+</html>

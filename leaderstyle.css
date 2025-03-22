@@ -1,0 +1,89 @@
+/* إعدادات الأساس */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* جعل خلفية الصفحة داكنة مع النصوص باللون الأبيض */
+body {
+    background-color: #121212; /* أسود داكن */
+    color: white;  /* النصوص باللون الأبيض */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* تنسيق العنوان */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+
+/* تنسيق الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* تنسيق رأس الجدول */
+thead {
+    background-color: #333; /* رمادي غامق */
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+    color: white;
+}
+
+/* تنسيق خلايا الجدول */
+td {
+    padding: 10px;
+    text-align: left;
+    color: #ccc; /* رمادي فاتح */
+    border-top: 1px solid #444; /* فاصل رمادي */
+}
+
+/* تنسيق الصورة (الأفاتار) */
+img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #666; /* حدود رمادية حول الصورة */
+}
+
+/* تنسيق الحاوية الرئيسية */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* تنسيق الجدول (Leaderboard) */
+.leaderboard {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #1e1e1e; /* خلفية رمادية داكنة */
+    border-radius: 5px;
+}
+
+/* رسالة الخطأ أو التحميل */
+span {
+    color: red;
+}
+
+/* Back button style */
+.back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
